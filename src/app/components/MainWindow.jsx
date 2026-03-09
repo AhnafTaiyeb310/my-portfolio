@@ -1,5 +1,5 @@
 import AsciiName from "./AsciiName";
-import TerminalComponent from "./TerminalComponent";
+import Terminal from "./Terminal";
 
 function MainWindow() {
     const commands = [
@@ -46,7 +46,7 @@ function MainWindow() {
         
         <div className="terminal flex mt-8 w-screen h-auto items-center justify-center">
             <div className="w-[95%] h-full border-3 border-matrix">
-                <TerminalComponent />
+                <Terminal />
             </div>
         </div>
         </>
