@@ -40,10 +40,14 @@ const TerminalInput = ({ onCommand, history }) => {
 
   return (
     <div className="flex gap-2 items-center mt-2 pb-4">
-      <span className="text-matrix font-bold shrink-0">ahnaf@portfolio:~$</span>
+      <span className="text-terminal-text font-bold shrink-0 text-lg">
+        ahnaf@portfolio
+        {/* <span className="text-matrix-dim"> ~ </span> */}
+        <span className="text-matrix"> ~ $</span>
+      </span>
       <input
         type="text"
-        className="bg-transparent border-none outline-none text-highlight-400 w-full caret-matrix font-mono"
+        className="bg-transparent border-none outline-none text-matrix w-full caret-matrix text-xl focus:ring-0"
         autoFocus
         value={value}
         onChange={(e) => setValue(e.target.value)}

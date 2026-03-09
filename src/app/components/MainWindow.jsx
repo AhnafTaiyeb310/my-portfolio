@@ -1,56 +1,113 @@
 import AsciiName from "./AsciiName";
 import Terminal from "./Terminal";
+import ScreenEffects from "./ScreenEffects";
 
 function MainWindow() {
-    const commands = [
-        "[who] or [w]", 
-        "[skills] or [s]", 
-        "[projects] or [p]",
-        "[resume] or [cv]"
-    ];
+    const commands = {
+        about_me: "Learn about me, my background, and what I do",
+        skills: "See the technologies and skills I have learned",
+        projects: "Check out the projects I have built",
+        resume: "View my latest resume",
+    };
     const socials = ["[email]", "[linkedin]", "[github]"];
+
     return (
-        <>
-        <div className="flex mt-6 w-screen h-auto items-center justify-center">
-            <div className="w-[95%] h-full border-3 border-matrix">
-                <div>
-                    <AsciiName />
+        <div className="relative min-h-screen bg-black-950 overflow-hidden selection:bg-matrix selection:text-black">
+            <ScreenEffects />
+
+            <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+                {/* Main Window Frame */}
+                <div className="w-full max-w-6xl terminal-border bg-black-150 backdrop-blur-sm overflow-hidden flex flex-col">
+
+                    {/* Window Header */}
+                    <div className="bg-black-250 px-4 py-2 flex items-center justify-between border-b border-matrix/30">
+                        <div className="flex gap-2">
+                            <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                        </div>
+                        <div className="text-[oklab(100%_0_0_/0.4)] text-md font-mono tracking-widest">
+                            {/* Ahnaf-OS v1.6.9 — Session: Guest */}
+                            ahnaf@portfolio:~
+                        </div>
+                        <div className="w-12"></div>
+                    </div>
+
+                    <div className="flex flex-col h-full">
+                        {/* Static Content Section (Top) */}
+                        <div className="w-full p-6 md:p-10 border-b border-matrix/20 overflow-y-auto max-h-auto">
+                            <div className="glow-text">
+                                <AsciiName />
+                            </div>
+                            
+                            <div className="main-content mt-8 space-y-8">
+                                <div className="name -space-y-1">
+                                    <h1 className=" text-2xl text-highlight-400 ">
+                                        Ahnaf Taiyeb — Fullstack Developer
+                                    </h1>
+                                    <h1 className="text-xl font-bold text-matrix-dim">
+                                        Problem solver | Tech lover | Fullstack creator
+                                    </h1>
+                                </div>
+                                <div className="y-space-0.5">
+                                    <h1 className="text-lg font-bold glow-text-amber text-highlight-400 uppercase">
+                                        System Status: Online
+                                    </h1>
+                                    <p className="text-xl text-matrix opacity-70 leading-relaxed">
+                                        Welcome to the personal terminal database. 
+                                        Accessing remote files... [OK]
+                                    </p>
+                                </div>
+                                
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="commands">
+                                        <h2 className="text-2xl mb-4 text-matrix tracking-wide border-b border-highlight-400/30 pb-2">
+                                            Available Commands:
+                                        </h2>
+                                        <div className="space-y-2">
+                                            {Object.entries(commands).map(([key, value], idx)=>(
+                                                <p key={idx} className="text-commands-color text-xl flex items-center gap-2 group cursor-pointer"> 
+                                                    <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> &gt; </span>
+                                                    [{key}] : {value}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="socials">
+                                        <h2 className="font-bold text-2xl mb-4 text-highlight-400 uppercase tracking-widest border-b border-highlight-400/30 pb-2">
+                                            Uplink Nodes
+                                        </h2>
+                                        <div className="space-y-2">
+                                            {socials.map((social, idx)=>(
+                                                <p key={idx} className="text-matrix text-lg flex items-center gap-2 group cursor-pointer hover:text-highlight-400 transition-colors"> 
+                                                    <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> # </span>
+                                                    {social} 
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-6 text-matrix-dim "> 
+                                <h1 className="text-lg ">💡Tip: Type a command or click on it to execute</h1>
+                            </div>
+                        </div>
+                    </div>
+                        {/* Terminal Section (Bottom) */}
+                        <div className="w-full bg-black/40 flex flex-col h-125 overflow-hidden">
+                            <Terminal />
+                        </div>
                 </div>
-                <div className="main-content my-4 mx-8">
-                    <div className="headings">
-                        <h1 className="text-xl text-highlight-400">Welcome to my personal portfolio! (Version 1.6.9)</h1>
-                        <h1 className="text-lg mt-2 text-highlight-400">Type /help to see the list of available commands.</h1>
-                        <h1 className="text-lg mt-1 text-highlight-400">Input a command to navigate.</h1>
-                        <h1 className="text-lg mt-3 text-highlight-400"><span>NEW</span> Check <span className="link">Social-media</span></h1>
-                    </div>
+                
 
-                    <div className="commands">
-                        <h1 className="font-bold text-2xl my-2 text-highlight-400">Available Commands:</h1>
-                        {
-                            commands.map((command, idx)=>(
-                                <p key={idx} className="text-matrix text-lg"> {command} </p>
-                            ))
-                        }
-                    </div>
-                    <div className="socials">
-                        <h1 className="font-bold text-2xl my-4 text-highlight-400">Socials:</h1>
-                        {
-                            socials.map((social, idx)=>(
-                                <p key={idx} className="text-matrix text-lg"> {social} </p>
-                            ))
-                        }
-                    </div>
-
+                {/* Subtle Footer Info */}
+                <div className="mt-4 text-matrix/30 text-xs font-mono uppercase tracking-[0.3em]">
+                    Terminal UI Interface © 2026 // Secure Connection
                 </div>
             </div>
         </div>
-        
-        <div className="terminal flex mt-8 w-screen h-auto items-center justify-center">
-            <div className="w-[95%] h-full border-3 border-matrix">
-                <Terminal />
-            </div>
-        </div>
-        </>
     );
 }
 

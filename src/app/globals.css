@@ -1,36 +1,73 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  
-} */
-
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #050505;
+  --foreground: #00FF41;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+  overflow-x: hidden;
 }
 
 @theme {
-  --color-matrix: #5abb9a;
-  --color-highlight-400: #ffebcd;
+  --color-matrix: oklch(0.79 0.21 151.71);
+  --color-black-950: #0a0a0a;
+  --color-black-150: #1a1a1a;
+  --color-black-250: #1e1e1e;
+  --color-matrix-dim: #00FF4155;
+  --color-highlight-400: #FFB000;
+  --color-terminal-bg: #050505;
+  --color-commands-color: oklch(0.86 0.13 207.08);
+  --color-terminal-text: oklch(0.71 0.17 254.62);
+
+  --font-mono: "VT323", "JetBrains Mono", monospace;
+
+  --animate-flicker: flicker 0.15s infinite;
+
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    100% { opacity: 1; }
+  }
 }
 
 .link {
-  @apply text-matrix text-lg underline;
+  @apply text-highlight-400 text-lg underline cursor-pointer;
+}
+
+.crt-vignette {
+  background: radial-gradient(circle, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 100%), 
+              linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 100%, 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.terminal-border {
+  border: 1px solid var(--color-matrix-dim);
+  box-shadow: 0 0 10px var(--color-matrix-dim);
+}
+
+.glow-text {
+  text-shadow: 0 0 5px var(--color-matrix);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 5px var(--color-highlight-400);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #00FF4133;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00FF4166;
 }
