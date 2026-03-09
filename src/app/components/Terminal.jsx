@@ -3,11 +3,15 @@
 import { useState, useRef, useEffect } from "react";
 import TerminalOutput from "./TerminalOutput";
 import TerminalInput from "./TerminalInput";
-import { handleCommandRouting } from "./commands";
+import { handleCommandRouting } from "./Commands";
 
 const Terminal = () => {
   const [history, setHistory] = useState([
-    { type: 'output', content: 'Welcome to my portfolio! Type help to get started.' }
+    {
+      type: "output",
+      content:
+        "Ahnaf Dev Environment v1.0 \nKernel: portfolio-6.1 \nArchitecture: x86_64",
+    },
   ]);
   const terminalRef = useRef(null);
 
@@ -29,7 +33,7 @@ const Terminal = () => {
       onClick={() => terminalRef.current?.querySelector('input')?.focus()}
     >
       <TerminalOutput history={history} />
-      <TerminalInput onCommand={handleCommand} />
+      <TerminalInput onCommand={handleCommand} history={history} />
     </div>
   );
 };
