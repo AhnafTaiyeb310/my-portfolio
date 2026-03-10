@@ -40,17 +40,17 @@ function MainWindow() {
                                 <AsciiName />
                             </div>
                             
-                            <div className="main-content mt-8 space-y-8">
+                            <div className="main-content mt-1 space-y-6">
                                 <div className="name -space-y-1">
                                     <h1 className=" text-2xl text-highlight-400 ">
                                         Ahnaf Taiyeb — Fullstack Developer
                                     </h1>
-                                    <h1 className="text-xl font-bold text-matrix-dim">
+                                    <h1 className="text-lg font-bold text-matrix-dim">
                                         Problem solver | Tech lover | Fullstack creator
                                     </h1>
                                 </div>
                                 <div className="y-space-0.5">
-                                    <h1 className="text-lg font-bold glow-text-amber text-highlight-400 uppercase">
+                                    <h1 className="text-md glow-text-amber font-semibold text-highlight-400 uppercase">
                                         System Status: Online
                                     </h1>
                                     <p className="text-xl text-matrix opacity-70 leading-relaxed">
@@ -60,16 +60,17 @@ function MainWindow() {
                                 </div>
                                 
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="commands">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    <div className="commands col-span-2">
                                         <h2 className="text-2xl mb-4 text-matrix tracking-wide border-b border-highlight-400/30 pb-2">
                                             Available Commands:
                                         </h2>
                                         <div className="space-y-2">
                                             {Object.entries(commands).map(([key, value], idx)=>(
-                                                <p key={idx} className="text-commands-color text-xl flex items-center gap-2 group cursor-pointer"> 
+                                                <p key={idx} className="grid grid-cols-[1.5rem_7rem_1fr] font-jet text-commands-color text-lg group cursor-pointer"> 
                                                     <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> &gt; </span>
-                                                    [{key}] : {value}
+                                                    <span className="">{key}</span> 
+                                                    <span className="mx-4 text-md text-matrix-text">-  {value}</span> 
                                                 </p>
                                             ))}
                                         </div>
@@ -91,7 +92,7 @@ function MainWindow() {
                                 </div>
                             </div>
                             <div className="mt-6 text-matrix-dim "> 
-                                <h1 className="text-lg ">💡Tip: Type a command or click on it to execute</h1>
+                                <h1 className="text-xl ">💡Tip: Type a command or click on it to execute</h1>
                             </div>
                         </div>
                     </div>

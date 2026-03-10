@@ -14,16 +14,19 @@ body {
 
 @theme {
   --color-matrix: oklch(0.79 0.21 151.71);
+  --color-matrix-text: oklab(0.79 -0.18 0.1 / 0.8);
+  --color-matrix-dim: #00FF4155;
   --color-black-950: #0a0a0a;
   --color-black-150: #1a1a1a;
   --color-black-250: #1e1e1e;
-  --color-matrix-dim: #00FF4155;
-  --color-highlight-400: #FFB000;
   --color-terminal-bg: #050505;
+  --color-highlight-400: #FFB000;
   --color-commands-color: oklch(0.86 0.13 207.08);
   --color-terminal-text: oklch(0.71 0.17 254.62);
 
-  --font-mono: "VT323", "JetBrains Mono", monospace;
+  --font-mono: "VT323", monospace;
+  --font-jet: "JetBrains Mono", monospace;
+  /* --font-mono: ui-monospace, monospace; */
 
   --animate-flicker: flicker 0.15s infinite;
 
