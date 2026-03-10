@@ -1,10 +1,11 @@
 import AsciiName from "./AsciiName";
 import Terminal from "./Terminal";
 import ScreenEffects from "./ScreenEffects";
+import CommandLink from "./CommandLink";
 
 function MainWindow() {
     const commands = {
-        about_me: "Learn about me, my background, and what I do",
+        about: "Learn about me, my background, and what I do",
         skills: "See the technologies and skills I have learned",
         projects: "Check out the projects I have built",
         resume: "View my latest resume",
@@ -15,7 +16,7 @@ function MainWindow() {
         <div className="relative min-h-screen bg-black-950 overflow-hidden selection:bg-matrix selection:text-black">
             <ScreenEffects />
 
-            <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+            <div className="flex flex-col items-center justify-start min-h-screen p-4 md:p-8">
                 {/* Main Window Frame */}
                 <div className="w-full max-w-6xl terminal-border bg-black-150 backdrop-blur-sm overflow-hidden flex flex-col">
 
@@ -27,15 +28,14 @@ function MainWindow() {
                             <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                         </div>
                         <div className="text-[oklab(100%_0_0_/0.4)] text-md font-mono tracking-widest">
-                            {/* Ahnaf-OS v1.6.9 — Session: Guest */}
                             ahnaf@portfolio:~
                         </div>
                         <div className="w-12"></div>
                     </div>
 
-                    <div className="flex flex-col h-full">
+                    <div className="flex flex-col">
                         {/* Static Content Section (Top) */}
-                        <div className="w-full p-6 md:p-10 border-b border-matrix/20 overflow-y-auto max-h-auto">
+                        <div className="w-full p-6 md:p-10 border-b border-matrix/20">
                             <div className="glow-text">
                                 <AsciiName />
                             </div>
@@ -67,11 +67,11 @@ function MainWindow() {
                                         </h2>
                                         <div className="space-y-2">
                                             {Object.entries(commands).map(([key, value], idx)=>(
-                                                <p key={idx} className="grid grid-cols-[1.5rem_7rem_1fr] font-jet text-commands-color text-lg group cursor-pointer"> 
-                                                    <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> &gt; </span>
-                                                    <span className="">{key}</span> 
-                                                    <span className="mx-4 text-md text-matrix-text">-  {value}</span> 
-                                                </p>
+                                                <CommandLink 
+                                                    key={idx} 
+                                                    cmd={key} 
+                                                    description={value} 
+                                                />
                                             ))}
                                         </div>
                                     </div>
@@ -95,11 +95,12 @@ function MainWindow() {
                                 <h1 className="text-xl ">💡Tip: Type a command or click on it to execute</h1>
                             </div>
                         </div>
-                    </div>
+
                         {/* Terminal Section (Bottom) */}
-                        <div className="w-full bg-black/40 flex flex-col h-125 overflow-hidden">
+                        <div id="terminal-section" className="w-full bg-black/40 flex flex-col max-h-auto overflow-hidden">
                             <Terminal />
                         </div>
+                    </div>
                 </div>
                 
 

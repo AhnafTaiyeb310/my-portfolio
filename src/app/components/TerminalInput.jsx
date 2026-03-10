@@ -40,7 +40,7 @@ const TerminalInput = ({ onCommand, history }) => {
 
   return (
     <div className="flex gap-2 items-center mt-2 pb-4">
-      <span className="text-terminal-text font-bold shrink-0 text-lg">
+      <span className="text-terminal-text font-bold shrink-0 text-xl">
         ahnaf@portfolio
         {/* <span className="text-matrix-dim"> ~ </span> */}
         <span className="text-matrix"> ~ $</span>

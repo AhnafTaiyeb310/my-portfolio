@@ -1,15 +1,43 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 import TerminalOutput from "./TerminalOutput";
 import TerminalInput from "./TerminalInput";
 import { handleCommandRouting } from "./Commands";
 
-const Terminal = () => {
+const Terminal = forwardRef((props, ref) => {
   const [history, setHistory] = useState([]);
   const [isBooting, setIsBooting] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
   const terminalRef = useRef(null);
+
+  const executeCommand = (command) => {
+    if (!isBooting) {
+      handleCommandRouting(command, history, setHistory);
+    }
+  };
+
+  useImperativeHandle(ref, () => ({
+    executeCommand
+  }));
+
+  // Listen for global command events
+  useEffect(() => {
+    const handleGlobalCommand = (e) => {
+      const command = e.detail;
+      if (command) {
+        executeCommand(command);
+        // Optional: Scroll terminal into view
+        const terminalElement = document.getElementById("terminal-section");
+        if (terminalElement) {
+          terminalElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    window.addEventListener('terminal-command', handleGlobalCommand);
+    return () => window.removeEventListener('terminal-command', handleGlobalCommand);
+  }, [isBooting, history]); // Re-bind when history/booting state changes
 
   useEffect(() => {
     setIsMounted(true);
@@ -17,7 +45,6 @@ const Terminal = () => {
       "Booting developer environment...",
       "Loading portfolio modules...",
       "Initializing profile...",
-      // "Ready.",
     ];
 
     let i = 0;
@@ -38,7 +65,6 @@ const Terminal = () => {
     handleCommandRouting(command, history, setHistory);
   };
 
-  // Scroll to bottom on history change
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
@@ -57,6 +83,8 @@ const Terminal = () => {
       {!isBooting && <TerminalInput onCommand={handleCommand} history={history} />}
     </div>
   );
-};
+});
+
+Terminal.displayName = "Terminal";
 
 export default Terminal;
