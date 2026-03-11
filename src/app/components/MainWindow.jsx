@@ -10,7 +10,11 @@ function MainWindow() {
         projects: "Check out the projects I have built",
         resume: "View my latest resume",
     };
-    const socials = ["[email]", "[linkedin]", "[github]"];
+    const socials = {
+        email: "mailto:ahnaf@example.com?subject=Project Inquiry&body=Hello I want to discuss a project",
+        linkedin: "https://www.linkedin.com/in/ahnaf-taiyeb-6b6298296/",
+        github: "https://github.com/AhnafTaiyeb310"
+    };
 
     return (
         <div className="relative min-h-screen bg-black-950 overflow-hidden selection:bg-matrix selection:text-black">
@@ -81,11 +85,11 @@ function MainWindow() {
                                             Uplink Nodes
                                         </h2>
                                         <div className="space-y-2">
-                                            {socials.map((social, idx)=>(
-                                                <p key={idx} className="text-matrix text-lg flex items-center gap-2 group cursor-pointer hover:text-highlight-400 transition-colors"> 
+                                            {Object.entries(socials).map(([title, href], idx)=>(
+                                                <a key={idx} href={href} target="_blank" rel="noopener noreferrer" className="text-matrix text-lg flex items-center gap-2 group cursor-pointer hover:text-highlight-400 transition-colors"> 
                                                     <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> # </span>
-                                                    {social} 
-                                                </p>
+                                                    {title} 
+                                                </a>
                                             ))}
                                         </div>
                                     </div>

@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Github, Globe, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
-const ProjectCard = ({ title, tagline, description, image, links, delay }) => {
+const ProjectCard = ({ title, tagline, tech, description, image, links, delay }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -21,7 +22,7 @@ const ProjectCard = ({ title, tagline, description, image, links, delay }) => {
           [ Preview_Image_Unavailable ]
         </div>
         {image && (
-          <img 
+          <Image 
             src={image} 
             alt={title} 
             className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
@@ -32,16 +33,26 @@ const ProjectCard = ({ title, tagline, description, image, links, delay }) => {
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
         <div className="mb-2">
-          <h3 className="text-matrix text-xl font-bold tracking-tight glow-text flex items-center gap-2">
+          <h3 className="text-matrix text-3xl tracking-tight glow-text flex items-center gap-2">
             <span className="text-matrix/40 font-mono text-sm font-normal">{'>'}</span>
             {title}
           </h3>
-          <p className="text-highlight-400/80 text-xs font-mono uppercase tracking-widest mt-1">
+          <p className="text-highlight-400/80 text-lg font-mono uppercase tracking-wider mt-1">
             {tagline}
           </p>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {tech?.map((item) => (
+              <span 
+                key={item} 
+                className="px-2 py-0.5 text-md font-mono border border-matrix/30 text-matrix bg-matrix/5 rounded-sm uppercase tracking-tighter"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <p className="text-matrix/70 text-sm font-mono leading-relaxed mt-4 flex-grow italic">
+        <p className="text-matrix/70 text-md font-jet leading-relaxed mt-4 flex-grow italic">
           {description}
         </p>
 
@@ -89,31 +100,28 @@ const ProjectCard = ({ title, tagline, description, image, links, delay }) => {
 const Projects = () => {
   const projectData = [
     {
-      title: "ClawX",
-      tagline: "Automation Framework",
-      description: "A high-performance modular automation framework designed for rapid deployment and scalable system orchestration using Python and gRPC.",
+      title: "Ahmed Digital",
+      tagline: "Creative portfolio for a Digital agency",
+      description:
+        "Built a modern portfolio website for a digital video editing agency using Next.js, Tailwind CSS, and GSAP. Focused on creating a visually professional and aesthetic experience to showcase their work effectively. Deployed on a custom domain via Namecheap, helping the agency present their portfolio more convincingly and attract new clients.",
       image: null,
-      links: { github: "#", demo: "#", external: "#" }
+      tech: ["Next.js", "TailwindCSS", "GSAP"],
+      links: { github: "#", demo: "#", external: "#" },
     },
     {
-      title: "Matrix-OS",
-      tagline: "Terminal Environment",
-      description: "A web-based terminal environment with full filesystem emulation, custom shell execution, and persistent user sessions.",
+      title: "Social-Media Clone",
+      tagline: "Fullstack Application",
+      description:
+        "Building a Social media clone inspired from Dev.to. Uploading the full project very soon. Right now you can check the code base from the github. It has Standard and optimized backend. built with Django Rest framework",
       image: null,
-      links: { github: "#", external: "#" }
+      tech: ["Django", "DRF", "Redis", "Celery"],
+      links: { github: "#", external: "#" },
     },
-    {
-      title: "Cyber-Sentinel",
-      tagline: "Security Monitor",
-      description: "Real-time network traffic analysis and anomaly detection system featuring advanced visualization and automated threat response.",
-      image: null,
-      links: { github: "#", demo: "#" }
-    }
   ];
 
   return (
     <div className="py-6 w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
         {projectData.map((project, index) => (
           <ProjectCard 
             key={index} 

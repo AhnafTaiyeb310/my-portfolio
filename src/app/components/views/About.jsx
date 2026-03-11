@@ -56,30 +56,27 @@ const About = () => {
           <p>
             I’m an aspiring Full-stack developer passionate about building
             real-world web applications using modern frontend and backend
-            technologies. 
+            technologies.
           </p>
 
           <p>
-            I enjoy working on complete systems — from frontend
-            to API development and database modeling. I’ve built projects using
-            React, Next.js, Django, REST APIs, and SQL databases,
+            I enjoy working on complete systems — from frontend to API
+            development and database modeling. I’ve built projects using React,
+            Next.js, Django, REST APIs, and SQL databases,
           </p>
 
           <p>
-            I’m
-            continuously improving my problem-solving skills through DSA
+            I’m continuously improving my problem-solving skills through DSA
             practice and hands-on development. Currently looking for internship
             or junior full-stack developer roles where I can learn, grow, and
             contribute to production systems.
           </p>
-
 
           {/* <p>
             I also maintain a technical journal called{" "}
             <TerminalLink href="#">MindDump</TerminalLink>, where I document my
             findings in latency optimization and RAG architectures.
           </p> */}
-
 
           <p className="text-highlight-400 font-bold">
             I love building things that push the boundaries of what&apos;s
@@ -91,9 +88,11 @@ const About = () => {
       {/* FOOTER HINT */}
       <div className="mt-8 pt-4 border-t border-matrix/10 flex flex-wrap gap-x-4 gap-y-1 text-sm text-matrix/50">
         <span>
-          Type <TerminalLink href="#">twitter</TerminalLink>,{" "}
-          <TerminalLink href="#">linkedin</TerminalLink>, or{" "}
-          <TerminalLink href="#">email</TerminalLink> to connect with me.
+          Type,{" "}
+          <TerminalLink href="https://www.linkedin.com/in/ahnaf-taiyeb-6b6298296/">
+            linkedin
+          </TerminalLink>
+          , or <TerminalLink href="mailto:ahnaf@example.com?subject=Project Inquiry&body=Hello I want to discuss a project">email</TerminalLink> to connect with me.
         </span>
       </div>
     </div>
