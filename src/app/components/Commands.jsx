@@ -1,13 +1,28 @@
 import About from "./views/About";
 import Projects from "./views/Projects";
 import Resume from "./views/Resume";
+import SkillsSection from "./views/Skills";
 
 export const COMMANDS = {
   help: {
     description: "List all available commands",
     action: (history) => ({
       type: "output",
-      content: "Available commands: help, about, projects, resume, clear",
+      content: "Available commands: help, about, skills, projects, resume, clear",
+    }),
+  },
+  skills: {
+    description: "Show my skills",
+    action: (history) => ({
+      type: "component",
+      content: <SkillsSection />,
+    }),
+  },
+  s: {
+    description: "Show my skills (alias)",
+    action: (history) => ({
+      type: "component",
+      content: <SkillsSection />,
     }),
   },
   about: {
