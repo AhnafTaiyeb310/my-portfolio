@@ -22,9 +22,10 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
           [ Preview_Image_Unavailable ]
         </div>
         {image && (
-          <Image 
-            src={image} 
-            alt={title} 
+          <Image
+            src={image}
+            fill
+            alt={title}
             className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
           />
         )}
@@ -33,8 +34,10 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
         <div className="mb-2">
-          <h3 className="text-matrix text-3xl tracking-tight glow-text flex items-center gap-2">
-            <span className="text-matrix/40 font-mono text-sm font-normal">{'>'}</span>
+          <h3 className="text-matrix font-jet text-2xl tracking-tight glow-text flex items-center gap-2">
+            <span className="text-matrix/40 font-mono text-sm font-normal">
+              {">"}
+            </span>
             {title}
           </h3>
           <p className="text-highlight-400/80 text-lg font-mono uppercase tracking-wider mt-1">
@@ -42,8 +45,8 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
           </p>
           <div className="flex flex-wrap gap-2 mt-3">
             {tech?.map((item) => (
-              <span 
-                key={item} 
+              <span
+                key={item}
                 className="px-2 py-0.5 text-md font-mono border border-matrix/30 text-matrix bg-matrix/5 rounded-sm uppercase tracking-tighter"
               >
                 {item}
@@ -59,26 +62,26 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
         {/* Footer Icons */}
         <div className="mt-6 pt-4 border-t border-matrix/10 flex items-center gap-4">
           {links.github && (
-            <a 
-              href={links.github} 
-              target="_blank" 
+            <a
+              href={links.github}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-matrix/40 hover:text-matrix transition-colors duration-300 hover:glow-text"
             >
-              <Github size={18} />
+              <Github size={24} />
             </a>
           )}
           {links.demo && (
-            <a 
-              href={links.demo} 
-              target="_blank" 
+            <a
+              href={links.demo}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-matrix/40 hover:text-matrix transition-colors duration-300 hover:glow-text"
             >
-              <Globe size={18} />
+              <Globe size={24} />
             </a>
           )}
-          {links.external && (
+          {/* {links.external && (
             <a 
               href={links.external} 
               target="_blank" 
@@ -87,7 +90,7 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
             >
               <ExternalLink size={18} />
             </a>
-          )}
+          )} */}
           <span className="ml-auto text-[10px] text-matrix/20 font-mono uppercase tracking-widest">
             v1.0.0
           </span>
@@ -104,9 +107,9 @@ const Projects = () => {
       tagline: "Creative portfolio for a Digital agency",
       description:
         "Built a modern portfolio website for a digital video editing agency using Next.js, Tailwind CSS, and GSAP. Focused on creating a visually professional and aesthetic experience to showcase their work effectively. Deployed on a custom domain via Namecheap, helping the agency present their portfolio more convincingly and attract new clients.",
-      image: null,
+      image: "/ahmed-digital.jpg",
       tech: ["Next.js", "TailwindCSS", "GSAP"],
-      links: { github: "#", demo: "#", external: "#" },
+      links: { demo: "https://ahmeddigital.com/" },
     },
     {
       title: "Social-Media Clone",
@@ -115,7 +118,7 @@ const Projects = () => {
         "Building a Social media clone inspired from Dev.to. Uploading the full project very soon. Right now you can check the code base from the github. It has Standard and optimized backend. built with Django Rest framework",
       image: null,
       tech: ["Django", "DRF", "Redis", "Celery"],
-      links: { github: "#", external: "#" },
+      links: { github: "https://github.com/AhnafTaiyeb310/social-media" },
     },
   ];
 

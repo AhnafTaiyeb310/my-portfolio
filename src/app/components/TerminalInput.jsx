@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const TerminalInput = ({ onCommand, history }) => {
   const [value, setValue] = useState("");
   const [historyIndex, setHistoryIndex] = useState(-1);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    // Focus manually but without preventScroll: false (to avoid the big page jump)
+    inputRef.current?.focus({ preventScroll: true });
+  }, []);
 
   const commandHistory = history
     .filter((line) => line.type === "command")
@@ -46,9 +52,9 @@ const TerminalInput = ({ onCommand, history }) => {
         <span className="text-matrix"> ~ $</span>
       </span>
       <input
+        ref={inputRef}
         type="text"
         className="bg-transparent border-none outline-none text-matrix w-full caret-matrix text-xl focus:ring-0"
-        autoFocus
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={handleKeyDown}
