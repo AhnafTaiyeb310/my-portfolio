@@ -8,7 +8,7 @@ function MainWindow() {
         about: "Learn about Ahnaf and his work",
         skills: "Technical stack and expertise",
         projects: "Check out portfolio projects",
-        resume: "View my latest resume",
+        resume: "View latest resume",
     };
     const socials = {
         email: "mailto:ahnaf@example.com?subject=Project Inquiry&body=Hello I want to discuss a project",
@@ -42,8 +42,8 @@ function MainWindow() {
                         <div className="w-full p-6 md:p-10 border-b border-matrix/20">
                             <AsciiName />
                             
-                            <div className="main-content mt-1 space-y-6">
-                                <div className="name -space-y-1">
+                            <div className="main-content mt-1">
+                                <div className="name my-6 md:my-4">
                                     <h1 className=" text-2xl line-clamp-2 text-highlight-400 ">
                                         Ahnaf Taiyeb — Fullstack Developer
                                     </h1>
@@ -51,11 +51,11 @@ function MainWindow() {
                                         Problem solver | Tech lover | Fullstack creator
                                     </h1>
                                 </div>
-                                <div className="y-space-0.5">
-                                    <h1 className="text-md glow-text-amber font-semibold text-highlight-400 uppercase">
+                                <div className="my-2">
+                                    <h1 className="text-base glow-text-amber font-semibold text-highlight-400 uppercase">
                                         System Status: Online
                                     </h1>
-                                    <p className="text-xl text-matrix opacity-70 leading-relaxed">
+                                    <p className="text-md mb-4 text-matrix opacity-70 leading-relaxed">
                                         Welcome to the personal terminal database. 
                                         Accessing remote files... [OK]
                                     </p>

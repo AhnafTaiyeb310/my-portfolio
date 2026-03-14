@@ -56,7 +56,7 @@ const TerminalIntro = ({ onComplete }) => {
                 key={i}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-matrix text-md md:text-lg mb-1"
+                className="text-matrix text-md md:text-lg mb-1 glow-text"
               >
                 <span className="opacity-50 tracking-tighter mr-2">
                   {new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })}
