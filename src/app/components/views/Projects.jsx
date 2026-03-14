@@ -55,7 +55,7 @@ const ProjectCard = ({ title, tagline, tech, description, image, links, delay })
           </div>
         </div>
 
-        <p className="text-matrix/70 text-md font-jet leading-relaxed mt-4 flex-grow italic">
+        <p className="text-matrix/70 md:text-md text-base font-jet leading-relaxed mt-4 flex-grow italic">
           {description}
         </p>
 

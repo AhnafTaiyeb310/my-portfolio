@@ -2,18 +2,25 @@
 
 const CommandLink = ({ cmd, label, description }) => {
   const handleClick = () => {
-    const event = new CustomEvent('terminal-command', { detail: cmd });
+    const event = new CustomEvent("terminal-command", { detail: cmd });
     window.dispatchEvent(event);
   };
 
   return (
-    <p 
-      className="grid grid-cols-[1.5rem_7rem_1fr] font-jet text-commands-color text-lg group cursor-pointer"
+    <p
       onClick={handleClick}
-    > 
-      <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity"> &gt; </span>
-      <span className="">{cmd}</span> 
-      <span className="mx-4 text-md text-matrix-text">-  {description}</span> 
+      className="flex flex-wrap items-start gap-x-3 gap-y-1 font-jet text-commands-color 
+      text-sm sm:text-base md:text-lg group cursor-pointer"
+    >
+      <span className="text-highlight-400 opacity-0 group-hover:opacity-100 transition-opacity">
+        &gt;
+      </span>
+
+      <span className="min-w-[4rem]">{cmd}</span>
+
+      <span className="text-xs sm:text-sm md:text-base text-matrix-text">
+        - {description}
+      </span>
     </p>
   );
 };
