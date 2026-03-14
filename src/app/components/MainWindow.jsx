@@ -40,7 +40,7 @@ function MainWindow() {
                     <div className="flex flex-col">
                         {/* Static Content Section (Top) */}
                         <div className="w-full p-6 md:p-10 border-b border-matrix/20">
-                            <div className="glow-text">
+                            <div className="">
                                 <AsciiName />
                             </div>
                             

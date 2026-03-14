@@ -8,14 +8,40 @@ const TerminalIntro = ({ onComplete }) => {
   const [phase, setPhase] = useState("booting");
 
   const bootMessages = [
-    "[ OK ] INITIALIZING_OS_CORE_V1.0.0",
-    "[ OK ] LOADING_SYSTEM_REGISTRIES",
-    "[ OK ] ESTABLISHING_ENCRYPTED_HANDSHAKE",
-    "[ OK ] SECURE_CONNECTION_CONFIRMED",
-    "[ OK ] ACCESS_GRANTED_GUEST_USER",
-    "[ .. ] PARSING_PORTFOLIO_MODULES",
-    "[ OK ] SYSTEM_READY",
+    "INITIALIZING_OS_CORE_V1.0.0 [ OK ] ",
+    "portfolioOS v1.0 [Build 2025.11.27]",
+    "Copyright (c) 2025 Ahnaf. All rights reserved.",
+    "booting portfolioOS v1.0...",
+    "initializing system modules... ",
+    "LOADING_SYSTEM_REGISTRIES ",
+    "loading kernel extensions... ",
+    "ESTABLISHING_ENCRYPTED_HANDSHAKE",
+    "SECURE_CONNECTION_CONFIRMED [ OK ]",
+    "ACCESS_GRANTED_GUEST_USER [ OK ]",
+    "PARSING_PORTFOLIO_MODULES [ OK ]",
+    "SYSTEM_READY [ OK ]",
   ];
+
+// portfolioOS v1.0 [Build 2025.11.27]
+// Copyright (c) 2025 Bilal. All rights reserved.
+ 
+// booting portfolioOS v1.0...
+// initializing system modules...
+// loading kernel extensions... [OK]
+// mounting file systems... [OK]
+// starting network services... [OK]
+// initializing ui/figma.make...
+// loading user profile...
+// loading experience database... [OK]
+// loading project registry... [OK]
+// loading contact module... [OK]
+ 
+// profile loaded successfully.
+// system ready.
+ 
+// welcome to portfolioOS.
+
+
 
   useEffect(() => {
     let currentLine = 0;
