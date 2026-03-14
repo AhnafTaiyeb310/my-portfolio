@@ -5,7 +5,7 @@ import CommandLink from "./CommandLink";
 
 function MainWindow() {
     const commands = {
-        about: "Learn about me, my background, and what I do",
+        about_me: "Learn about me, my background, and what I do",
         skills: "See the technologies and skills I have learned",
         projects: "Check out the projects I have built",
         resume: "View my latest resume",
@@ -40,9 +40,7 @@ function MainWindow() {
                     <div className="flex flex-col">
                         {/* Static Content Section (Top) */}
                         <div className="w-full p-6 md:p-10 border-b border-matrix/20">
-                            <div className="">
-                                <AsciiName />
-                            </div>
+                            <AsciiName />
                             
                             <div className="main-content mt-1 space-y-6">
                                 <div className="name -space-y-1">
