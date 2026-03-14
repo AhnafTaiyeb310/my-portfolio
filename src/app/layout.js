@@ -1,4 +1,5 @@
 import { VT323, JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
 const vt323 = VT323({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         className={`${vt323.variable} ${jetbrains.variable} font-mono antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
