@@ -8,9 +8,8 @@ const TerminalIntro = ({ onComplete }) => {
   const [phase, setPhase] = useState("booting");
 
   const bootMessages = [
-    "INITIALIZING_OS_CORE_V1.0.0 [ OK ] ",
     "portfolioOS v1.0 [Build 2025.11.27]",
-    "Copyright (c) 2025 Ahnaf. All rights reserved.",
+    "Copyright (c) 2025 Bilal. All rights reserved.",
     "booting portfolioOS v1.0...",
     "initializing system modules... ",
     "LOADING_SYSTEM_REGISTRIES ",
@@ -21,26 +20,6 @@ const TerminalIntro = ({ onComplete }) => {
     "PARSING_PORTFOLIO_MODULES [ OK ]",
     "SYSTEM_READY [ OK ]",
   ];
-
-// portfolioOS v1.0 [Build 2025.11.27]
-// Copyright (c) 2025 Bilal. All rights reserved.
- 
-// booting portfolioOS v1.0...
-// initializing system modules...
-// loading kernel extensions... [OK]
-// mounting file systems... [OK]
-// starting network services... [OK]
-// initializing ui/figma.make...
-// loading user profile...
-// loading experience database... [OK]
-// loading project registry... [OK]
-// loading contact module... [OK]
- 
-// profile loaded successfully.
-// system ready.
- 
-// welcome to portfolioOS.
-
 
 
   useEffect(() => {
@@ -62,7 +41,7 @@ const TerminalIntro = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-[10000] bg-black flex flex-col items-center justify-center p-4 font-mono overflow-hidden">
+    <div className="fixed inset-0 z-10000 bg-black flex flex-col items-center justify-center p-4 font-mono overflow-hidden">
       <AnimatePresence mode="wait">
         {phase === "booting" && (
           <motion.div
@@ -77,7 +56,7 @@ const TerminalIntro = ({ onComplete }) => {
                 key={i}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-matrix text-sm md:text-base mb-1"
+                className="text-matrix text-md md:text-lg mb-1"
               >
                 <span className="opacity-50 tracking-tighter mr-2">
                   {new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })}

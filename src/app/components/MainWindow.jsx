@@ -5,9 +5,9 @@ import CommandLink from "./CommandLink";
 
 function MainWindow() {
     const commands = {
-        about_me: "Learn about me, my background, and what I do",
-        skills: "See the technologies and skills I have learned",
-        projects: "Check out the projects I have built",
+        about: "Learn about Ahnaf and his work",
+        skills: "Technical stack and expertise",
+        projects: "Check out portfolio projects",
         resume: "View my latest resume",
     };
     const socials = {
@@ -44,7 +44,7 @@ function MainWindow() {
                             
                             <div className="main-content mt-1 space-y-6">
                                 <div className="name -space-y-1">
-                                    <h1 className=" text-2xl text-highlight-400 ">
+                                    <h1 className=" text-2xl line-clamp-2 text-highlight-400 ">
                                         Ahnaf Taiyeb — Fullstack Developer
                                     </h1>
                                     <h1 className="text-lg font-bold text-matrix-dim">
@@ -67,7 +67,7 @@ function MainWindow() {
                                         <h2 className="text-2xl mb-4 text-matrix tracking-wide border-b border-highlight-400/30 pb-2">
                                             Available Commands:
                                         </h2>
-                                        <div className="space-y-2">
+                                        <div className="space-y-2 w-full">
                                             {Object.entries(commands).map(([key, value], idx)=>(
                                                 <CommandLink 
                                                     key={idx} 
