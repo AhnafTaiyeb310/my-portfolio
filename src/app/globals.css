@@ -21,12 +21,12 @@ body {
   --color-black-250: #1e1e1e;
   --color-terminal-bg: #050505;
   --color-highlight-400: #FFB000;
+  --color-highlight-400-dim: #B27B00;
   --color-commands-color: oklch(0.86 0.13 207.08);
   --color-terminal-text: oklch(0.71 0.17 254.62);
 
   --font-mono: "VT323", monospace;
   --font-jet: "JetBrains Mono", monospace;
-  /* --font-mono: ui-monospace, monospace; */
 
   --animate-flicker: flicker 0.15s infinite;
   --animate-scan: scan 2s linear infinite;

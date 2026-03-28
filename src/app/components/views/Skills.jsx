@@ -2,19 +2,6 @@
 
 import { motion } from "framer-motion";
 
-const StarRating = ({ rating }) => {
-  const totalStars = 5;
-
-  return (
-    <span className="flex gap-1 shrink-0 text-sm sm:text-base">
-      {[...Array(totalStars)].map((_, i) => (
-        <span key={i} className={i < rating ? "text-matrix" : "text-matrix/20"}>
-          {i < rating ? "★" : "☆"}
-        </span>
-      ))}
-    </span>
-  );
-};
 
 const SkillCard = ({ title, skills, delayOffset }) => {
   return (
@@ -52,15 +39,19 @@ const SkillCard = ({ title, skills, delayOffset }) => {
               }}
               className="text-matrix font-mono text-sm sm:text-base flex items-center justify-between gap-3"
             >
-              <div className="flex items-center gap-2 overflow-hidden">
-                <span className="text-matrix/40 shrink-0">{">"}</span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 overflow-hidden">
+                  <span className="text-matrix/40 shrink-0">{">"}</span>
 
-                <span className="truncate text-xl md:text-2xl ">
-                  {skill.name}
+                  <span className="truncate text-xl md:text-2xl ">
+                    {skill.name}
+                  </span>
+                </div>
+
+                <span className="text-highlight-400/80">
+                  {skill.level}
                 </span>
               </div>
-
-              <StarRating rating={skill.rating} />
             </motion.div>
           ))}
         </div>
@@ -80,27 +71,27 @@ const SkillsGrid = () => {
     {
       title: "Languages",
       skills: [
-        { name: "Python", rating: 4 },
-        { name: "JavaScript", rating: 5 },
-        { name: "C", rating: 4 },
-        { name: "C++", rating: 4 },
+        { name: "Python", level: "(Django, REST APIs)" },
+        { name: "JavaScript", level: "(ES6+, async/await, DOM)" },
+        { name: "C/C++", level: "(Problem Solving, DSA)" },
       ],
     },
     {
-      title: "Frameworks",
+      title: "Frontend Technologies",
       skills: [
-        { name: "React", rating: 5 },
-        { name: "Next.js", rating: 4 },
-        { name: "Django", rating: 5 },
-        { name: "Rest Framework", rating: 5 },
+        { name: "React", level: "(Hooks, Context API)" },
+        { name: "Next.js", level: "(App Router, SSR, routing)" },
+        { name: "State Management", level: "(Redux-Toolkit, Zustand)" },
+        { name: "Data Fetching", level: "(TanStack-Query, Axios)" },
+        { name: "Styling", level: "(Tailwind CSS, ShadcnUI, Gsap)" },
       ],
     },
     {
-      title: "Tools",
+      title: "Backend Technologies",
       skills: [
-        { name: "Git", rating: 4 },
-        { name: "PostMan", rating: 4 },
-        { name: "VS Code", rating: 5 },
+        { name: "Django", level: "(REST Framework, Redis, Celery)" },
+        { name: "Authentication ", level: "(JWT, session, HttpOnly-cookies)" },
+        { name: "Database", level: "(MySQL, Postgres)" },
       ],
     },
   ];
