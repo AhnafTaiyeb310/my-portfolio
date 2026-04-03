@@ -109,15 +109,15 @@ const Projects = () => {
         "Built a modern portfolio website for a digital video editing agency using Next.js, Tailwind CSS, and GSAP. Focused on creating a visually professional and aesthetic experience to showcase their work effectively. Deployed on a custom domain via Namecheap, helping the agency present their portfolio more convincingly and attract new clients.",
       image: "/ahmed-digital.jpg",
       tech: ["Next.js", "TailwindCSS", "GSAP"],
-      links: { demo: "https://ahmeddigital.com/" },
+      links: { demo: "https://ahmed-digital-main.vercel.app/" },
     },
     {
       title: "Social-Media Clone",
       tagline: "Fullstack Application",
       description:
-        "Building a Social media clone inspired from Dev.to. Uploading the full project very soon. Right now you can check the code base from the github. It has Standard and optimized backend. built with Django Rest framework",
-      image: null,
-      tech: ["Django", "DRF", "Redis", "Celery"],
+        "Sync – The Developer’s Social Network is a modern platform for sharing stories, code, and insights, inspired by Hashnode and Medium. It features dynamic content creation with multi-image uploads and tagging, real-time interactions with nested discussions and instant likes, personalized user profiles with follow systems, a dual-layered search experience (Quick Search + filtered results), and a powerful draft management dashboard. Built with Next.js (App Router), Tailwind CSS, TanStack Query, Zustand, Django REST Framework, Celery, Redis, and Cloudinary.",
+      image: "/sync1.jpg",
+      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustand"],
       links: { github: "https://github.com/AhnafTaiyeb310/social-media" },
     },
   ];
