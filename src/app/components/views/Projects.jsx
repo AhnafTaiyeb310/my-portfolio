@@ -117,7 +117,7 @@ const Projects = () => {
       description:
         "Sync – The Developer’s Social Network is a modern platform for sharing stories, code, and insights, inspired by Hashnode and Medium. It features dynamic content creation with multi-image uploads and tagging, real-time interactions with nested discussions and instant likes, personalized user profiles with follow systems, a dual-layered search experience (Quick Search + filtered results), and a powerful draft management dashboard. Built with Next.js (App Router), Tailwind CSS, TanStack Query, Zustand, Django REST Framework, Celery, Redis, and Cloudinary.",
       image: "/sync1.jpg",
-      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustand"],
+      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustandnpm run dev"],
       links: { github: "https://github.com/AhnafTaiyeb310/social-media" },
     },
   ];
