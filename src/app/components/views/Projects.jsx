@@ -117,8 +117,20 @@ const Projects = () => {
       description:
         "Sync – The Developer’s Social Network is a modern platform for sharing stories, code, and insights, inspired by Hashnode and Medium. It features dynamic content creation with multi-image uploads and tagging, real-time interactions with nested discussions and instant likes, personalized user profiles with follow systems, a dual-layered search experience (Quick Search + filtered results), and a powerful draft management dashboard. Built with Next.js (App Router), Tailwind CSS, TanStack Query, Zustand, Django REST Framework, Celery, Redis, and Cloudinary.",
       image: "/sync1.jpg",
-      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustandnpm run dev"],
-      links: { github: "https://github.com/AhnafTaiyeb310/social-media" },
+      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustand"],
+      links: {
+        github: "https://github.com/AhnafTaiyeb310/social-media",
+        demo: "https://syncdev-social.vercel.app/",
+      },
+    },
+    {
+      title: "E-commerce",
+      tagline: "Fullstack Application",
+      description:
+        "Built as a high-performance, decoupled e-commerce platform, this project leverages a Django REST Framework backend and a Next.js frontend to achieve sub-500ms response times through rigorous query optimization and database indexing. The architecture is engineered for scalability, integrating Celery and Redis for asynchronous task processing alongside Cloudinary for automated, cloud-based media management. Security is prioritized via a modern authentication system featuring JWT, Google OAuth, and robust CORS/CSRF protections, while the entire ecosystem is containerized with Docker to ensure a streamlined DevOps workflow for automated deployment to Render and Vercel.",
+      image: "/e-commerce1.jpg",
+      tech: ["Django", "DRF", "Celery", "Next.js", "Tanstack", "Zustand"],
+      links: { github: "https://github.com/AhnafTaiyeb310/e-commerce" },
     },
   ];
 

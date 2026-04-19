@@ -78,7 +78,7 @@ const Resume = () => {
               {/* PDF Iframe */}
               <div className="flex-grow bg-[#1a1a1a]">
                 <iframe
-                  src="/resume1.pdf"
+                  src="/resume.pdf"
                   className="w-full h-full border-none"
                   title="My Resume"
                 />
