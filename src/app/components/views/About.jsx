@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 
 const TerminalLink = ({ href, children }) => (
   <a
@@ -29,20 +29,13 @@ const About = () => {
 
           {/* ASCII GRAPHIC */}
           <div className="text-[7px] sm:text-[8px] leading-[7px] sm:leading-[8px] text-matrix opacity-80 font-mono select-none overflow-hidden">
-            {`
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-▒▒                ▒▒
-▒▒  ▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒
-▒▒  ▓▓        ▓▓  ▒▒
-▒▒  ▓▓  ▓▓▓▓  ▓▓  ▒▒
-▒▒  ▓▓  ▓▓▓▓  ▓▓  ▒▒
-▒▒  ▓▓  ▓▓▓▓  ▓▓  ▒▒
-▒▒  ▓▓  ▓▓▓▓  ▓▓  ▒▒
-▒▒  ▓▓        ▓▓  ▒▒
-▒▒  ▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒
-▒▒                ▒▒
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-            `.trim()}
+            <Image
+              src="/dp.gif"
+              alt="Profile Picture"
+              width={500}
+              height={300}
+              unoptimized // Recommended for GIFs
+            />
 
             <div className="mt-2 text-[9px] sm:text-[10px] space-y-1">
               <div>[SYSTEM: ONLINE]</div>
