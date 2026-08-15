@@ -2,6 +2,7 @@ import { VT323, JetBrains_Mono,  } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
+import AsciiCursorTrail from "./components/AsciiCursorTrail";
 
 const vt323 = VT323({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         {children}
         <SpeedInsights />
         <Analytics />
+        <AsciiCursorTrail />
       </body>
     </html>
   );
