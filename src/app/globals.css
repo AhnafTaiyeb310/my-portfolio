@@ -12,6 +12,17 @@ body {
   overflow-x: hidden;
 }
 
+
+/* Normal state - Matrix Green Pixel Arrow */
+html, body {
+  cursor: url('/cursor-default.svg') 0 0, auto;
+}
+
+/* Hovering over clickable elements - Matrix Green Pixel Hand */
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  cursor: url('/cursor-pointer.svg') 6 0, pointer;
+}
+
 @theme {
   --color-matrix: oklch(0.79 0.21 151.71);
   --color-matrix-text: oklab(0.79 -0.18 0.1 / 0.8);
